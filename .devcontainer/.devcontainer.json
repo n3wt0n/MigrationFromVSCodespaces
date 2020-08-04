@@ -1,0 +1,24 @@
+{
+    // Open port 3000 by default
+    "appPort": 3000,
+    //"forwardPorts": [1, 2, 3],
+
+    // Install needed extensions
+    "extensions": [
+      "ms-dotnettools.csharp",
+      "ms-azuretools.vscode-azurefunctions",
+      "ms-vscode.azure-account",
+      "wakatime.vscode-wakatime",
+      "davidanson.vscode-markdownlint",
+      "github.vscode-pull-request-github",
+      "johnpapa.vscode-peacock"
+    ],
+  
+    // Adds VS Code settings.json values into the environment.
+    "settings": {
+      "peacock.remoteColor": "#0078D7"
+    },
+  
+    // Run Bash script in .devcontainer directory
+    "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
+  }

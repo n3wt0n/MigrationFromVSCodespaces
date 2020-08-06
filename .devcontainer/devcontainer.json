@@ -1,4 +1,13 @@
 {
+    //CUSTOM CONTAINER SECTION
+    "name": "Codespaces",
+    "dockerFile": "customImage.dockerfile",
+    //image: "repo/image:tag"
+    "remoteUser": "codespace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/codespace/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/home/codespace/workspace",
+    "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
     // Open port 3000 by default
     "appPort": 3000,
     //"forwardPorts": [1, 2, 3],
@@ -18,7 +27,4 @@
     "settings": {
       "peacock.remoteColor": "#0078D7"
     },
-  
-    // Run Bash script in .devcontainer directory
-    "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
   }
